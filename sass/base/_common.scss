@@ -1,0 +1,47 @@
+body {
+  max-width: 1600px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 14px;
+  color: $primary-text-color;
+  background-color: $background-color;
+  letter-spacing: 0.03em;
+}
+
+ul {
+  // can be a :placeholder;
+  list-style: none;
+  padding-inline-start: 0px;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+}
+
+img {
+  display: block; /* чтоб у картинки убрался маржин боттом */
+  max-width: 100%; /* чтоб картинка не расширялась больше чем нужно */
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+  margin-block-end: 0;
+  margin-block-start: 0;
+}
+/* Контейнер */
+
+.container {
+  margin: 0 auto; /*будет по центру */
+  max-width: 1170px; /*ширина контейнера 1200 но отнимаем паддинги 15+15 (1200-30=1170) */
+  padding-left: 15px;
+  padding-right: 15px;
+  /* padding: 15px делает репета и тогда ставит ширину видз 1200рх*/
+}
+
+.section {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}

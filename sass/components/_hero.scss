@@ -1,0 +1,54 @@
+/*Перший блок*/
+
+.hero {
+  padding-top: 200px;
+  padding-bottom: 200px;
+  background-color: $secondary-background-color;
+}
+
+.overlay {
+  max-width: 1600px;
+  min-height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(196, 196, 196, 1);
+  background-image: url(../images/overlay.jpg);
+  background-image: rgba(47, 48, 58, 0.4);
+  // background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
+  // // 0, 0, 0, 0), rgba(0, 0, 0, 5)
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.hero__tittle {
+  @include font(900, 44px, 1.36, 0.06em);
+  width: 696px;
+  margin: 0 auto;
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  margin-bottom: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  color: $background-color;
+  /* background-color: teal; */
+}
+
+.hero__button {
+  @extend %button;
+  display: block;
+  margin: 0 auto;
+  font-family: inherit;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+  border: 1px solid transparent;
+
+  /* add padding?
+        transparent border not obligatory
+        display inline block
+        это у нас не ссылка поэтому не нужно инлайн и паддинг */
+}
+
+/* .button:hover,
+    button:focus {
+      border-radius: 4px;
+    } */
