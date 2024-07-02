@@ -32,6 +32,20 @@ p {
   margin-block-start: 0;
 }
 
+/* Контейнер */
+.container {
+  margin: 0 auto; /*будет по центру */
+  max-width: 1170px; /*ширина контейнера 1200 но отнимаем паддинги 15+15 (1200-30=1170) */
+  padding-left: 15px;
+  padding-right: 15px;
+  /* padding: 15px делает репета и тогда ставит ширину видз 1200рх*/
+}
+
+.section {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
 .clients__title, .team__title, .about__title {
   font-size: 36px;
   font-weight: 700;
@@ -42,7 +56,7 @@ p {
   color: rgb(33, 33, 33);
 }
 
-.hero__button, .footer-form__btn, .modal__submit-btn {
+.footer-form__btn, .modal__submit-btn, .hero__button {
   padding: 0;
   min-width: 200px;
   height: 50px;
@@ -163,6 +177,8 @@ p {
   text-decoration: none;
   display: flex;
   align-items: center;
+  padding-top: 32px;
+  padding-bottom: 32px;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .contacts__link:hover, .contacts__link:focus {
@@ -214,6 +230,58 @@ p {
   color: rgb(255, 255, 255);
 }
 
+/*Перший блок*/
+.hero {
+  padding-top: 200px;
+  padding-bottom: 200px;
+  background-color: rgb(47, 48, 58);
+}
+
+.overlay {
+  max-width: 1600px;
+  min-height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgb(196, 196, 196);
+  background-image: url(../images/overlay.jpg);
+  background-image: rgba(47, 48, 58, 0.4);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.hero__tittle {
+  font-weight: 900;
+  font-size: 44px;
+  line-height: 1.36;
+  letter-spacing: 0.06em;
+  width: 696px;
+  margin: 0 auto;
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  margin-bottom: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  color: rgb(255, 255, 255);
+  /* background-color: teal; */
+}
+
+.hero__button {
+  display: block;
+  margin: 0 auto;
+  font-family: inherit;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+  border: 1px solid transparent;
+  /* add padding?
+        transparent border not obligatory
+        display inline block
+        это у нас не ссылка поэтому не нужно инлайн и паддинг */
+}
+
+/* .button:hover,
+    button:focus {
+      border-radius: 4px;
+    } */
 /* ----------------------Modal----------------------------*/
 .backdrop {
   position: fixed;
@@ -233,10 +301,6 @@ p {
   pointer-events: none; /*при таком классе на єлемент не действуют никакие собітия */
 }
 
-.backdrop.is-hidden .modal {
-  transform: translate(-50%, -50%) scale(0.9); /*стилі для схованої модалки */
-}
-
 .modal {
   position: absolute;
   top: 50%;
@@ -252,6 +316,9 @@ p {
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
   /* transform: scale(1); */
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0.9); /*стилі для схованої модалки */
 }
 
 .no-scroll {
@@ -446,6 +513,134 @@ p {
   text-align: center;
 }
 
+/* ----------------------Features----------------------------*/
+.features {
+  padding-bottom: 0;
+}
+
+.features__list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -30px;
+  justify-content: center;
+}
+
+.features__item {
+  flex-basis: calc(25% - 30px);
+  margin-left: 30px;
+  height: 100%;
+}
+
+.features__subtitle {
+  font-weight: 700;
+  line-height: 1.17;
+  margin-top: 30px;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.features__text {
+  font-weight: 400;
+  line-height: 1.71;
+  margin-top: 10px;
+  text-align: left;
+  color: rgb(117, 117, 117);
+}
+
+.features__image {
+  background-color: rgb(245, 244, 250);
+  display: flex;
+  width: 100%;
+  height: 120px;
+  border-radius: 4px;
+  align-items: center;
+  justify-content: center;
+}
+
+/*---------------About-------------------------*/
+.about__list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -30px;
+}
+
+.about__item {
+  flex-basis: calc(33.3333333333% - 30px);
+  margin-left: 30px;
+}
+
+.about__wrap {
+  position: relative;
+}
+
+.about__text {
+  font-weight: 700;
+  line-height: 1.17;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 70px;
+  text-transform: uppercase;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  background-color: rgba(47, 48, 58, 0.8);
+  white-space: nowrap; /* забороняємо пренос на нову строку*/
+  overflow: hidden; /*ховаємо все зайве але треба падінги поставити */
+  text-overflow: ellipsis;
+}
+
+/* Варіант: .about-list-item:not(:last-child) {
+        margin-right: 30px;
+      } */
+/*-------------------------Team---------------------------*/
+.team {
+  background-color: #f5f4fa;
+}
+
+.team__list {
+  margin: 0; /*reset */
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -30px;
+  margin-top: -30px;
+}
+
+.team__item {
+  margin: 0; /*reset */
+  padding: 0;
+  flex-basis: calc(25% - 30px);
+  margin-left: 30px;
+  margin-top: 30px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 0px 0px 4px 4px;
+  box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1411764706);
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1215686275);
+}
+
+.team__text-box {
+  padding-top: 30px;
+  padding-bottom: 16px;
+}
+.team__text-box p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.2;
+  text-align: center;
+  color: rgb(175, 177, 184);
+}
+.team__text-box h3 {
+  font-size: 16px;
+  line-height: 1.2;
+  margin-bottom: 10px;
+  text-align: center;
+  color: rgb(33, 33, 33);
+}
+
 /* ---------------------Social icons--------------*/
 .social__list {
   display: flex;
@@ -498,6 +693,48 @@ p {
 .footer-links__icon {
   fill: currentColor;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* -------------Clients-------------------------- */
+.clients__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0;
+  margin-right: -30px;
+  margin-top: -30px;
+}
+
+.clients__item {
+  margin: 0;
+  flex-basis: calc(16.6666666667% - 30px);
+  margin-right: 30px;
+  margin-top: 30px;
+  height: 92px;
+}
+
+.clients__link {
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgb(175, 177, 184);
+  border-radius: 4px;
+  color: rgb(175, 177, 184);
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.clients__link:hover, .clients__link:focus {
+  border: 1px solid rgb(33, 150, 243);
+}
+
+.clients__icon {
+  fill: currentColor;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.clients__link:hover .clients__icon, .clients__link:focus .clients__icon {
+  fill: rgb(33, 150, 243);
 }
 
 /* ---------------Footer------------------ */
@@ -750,242 +987,4 @@ p {
   margin-top: 4px;
   text-align: left;
   color: rgb(117, 117, 117);
-}
-
-/* Контейнер */
-.container {
-  margin: 0 auto; /*будет по центру */
-  max-width: 1170px; /*ширина контейнера 1200 но отнимаем паддинги 15+15 (1200-30=1170) */
-  padding-left: 15px;
-  padding-right: 15px;
-  /* padding: 15px делает репета и тогда ставит ширину видз 1200рх*/
-}
-
-.section {
-  padding-top: 94px;
-  padding-bottom: 94px;
-}
-
-/*Перший блок*/
-.hero {
-  padding-top: 200px;
-  padding-bottom: 200px;
-  background-color: rgb(47, 48, 58);
-}
-
-.overlay {
-  max-width: 1600px;
-  min-height: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: rgb(196, 196, 196);
-  background-image: url(../images/overlay.jpg);
-  background-image: rgba(47, 48, 58, 0.4);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-
-.hero__tittle {
-  font-weight: 900;
-  font-size: 44px;
-  line-height: 1.36;
-  letter-spacing: 0.06em;
-  width: 696px;
-  margin: 0 auto;
-  margin-block-start: 0px;
-  margin-block-end: 0px;
-  margin-bottom: 30px;
-  text-align: center;
-  text-transform: uppercase;
-  color: rgb(255, 255, 255);
-  /* background-color: teal; */
-}
-
-.hero__button {
-  display: block;
-  margin: 0 auto;
-  font-family: inherit;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
-  border: 1px solid transparent;
-  /* add padding?
-      transparent border not obligatory
-      display inline block
-      это у нас не ссылка поэтому не нужно инлайн и паддинг */
-}
-
-/* .button:hover,
-  button:focus {
-    border-radius: 4px;
-  } */
-/* ----------------------Features----------------------------*/
-.features {
-  padding-bottom: 0;
-}
-
-.features__list {
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: -30px;
-  justify-content: center;
-}
-
-.features__item {
-  flex-basis: calc(25% - 30px);
-  margin-left: 30px;
-  height: 100%;
-}
-
-.features__subtitle {
-  font-weight: 700;
-  line-height: 1.17;
-  margin-top: 30px;
-  text-transform: uppercase;
-  text-align: left;
-}
-
-.features__text {
-  font-weight: 400;
-  line-height: 1.71;
-  margin-top: 10px;
-  text-align: left;
-  color: rgb(117, 117, 117);
-}
-
-.features__image {
-  background-color: rgb(245, 244, 250);
-  display: flex;
-  width: 100%;
-  height: 120px;
-  border-radius: 4px;
-  align-items: center;
-  justify-content: center;
-}
-
-/*---------------About-------------------------*/
-.about__list {
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: -30px;
-}
-
-.about__item {
-  flex-basis: calc(33.3333333333% - 30px);
-  margin-left: 30px;
-}
-
-.about__wrap {
-  position: relative;
-}
-
-.about__text {
-  font-weight: 700;
-  line-height: 1.17;
-  position: absolute;
-  bottom: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 70px;
-  text-transform: uppercase;
-  text-align: center;
-  color: rgb(255, 255, 255);
-  background-color: rgba(47, 48, 58, 0.8);
-  white-space: nowrap; /* забороняємо пренос на нову строку*/
-  overflow: hidden; /*ховаємо все зайве але треба падінги поставити */
-  text-overflow: ellipsis;
-}
-
-/* Варіант: .about-list-item:not(:last-child) {
-      margin-right: 30px;
-    } */
-/*-------------------------Team---------------------------*/
-.team {
-  background-color: #f5f4fa;
-}
-
-.team__list {
-  margin: 0; /*reset */
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: -30px;
-  margin-top: -30px;
-}
-
-.team__item {
-  margin: 0; /*reset */
-  padding: 0;
-  flex-basis: calc(25% - 30px);
-  margin-left: 30px;
-  margin-top: 30px;
-  background-color: rgb(255, 255, 255);
-  border-radius: 0px 0px 4px 4px;
-  box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2);
-  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1411764706);
-  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1215686275);
-}
-
-.team__text-box {
-  padding-top: 30px;
-  padding-bottom: 16px;
-}
-
-.team__text-box > p {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.2;
-  text-align: center;
-  color: rgb(175, 177, 184);
-}
-
-.team__text-box > h3 {
-  font-size: 16px;
-  line-height: 1.2;
-  margin-bottom: 10px;
-  text-align: center;
-  color: rgb(33, 33, 33);
-}
-
-/* -------------Clients-------------------------- */
-.clients__list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 0;
-  margin-right: -30px;
-  margin-top: -30px;
-}
-
-.clients__item {
-  margin: 0;
-  flex-basis: calc(16.6666666667% - 30px);
-  margin-right: 30px;
-  margin-top: 30px;
-  height: 92px;
-}
-
-.clients__link {
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid rgb(175, 177, 184);
-  border-radius: 4px;
-  color: rgb(175, 177, 184);
-  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-.clients__link:hover, .clients__link:focus {
-  border: 1px solid rgb(33, 150, 243);
-}
-
-.clients__icon {
-  fill: currentColor;
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-.clients__link:hover .clients__icon, .clients__link:focus .clients__icon {
-  fill: rgb(33, 150, 243);
 }/*# sourceMappingURL=main.css.map */

@@ -31,17 +31,15 @@
 .team__text-box {
   padding-top: 30px;
   padding-bottom: 16px;
-}
-
-.team__text-box > p {
-  @include font(400, 16px, 1.2, null);
-  text-align: center;
-  color: $icon-color;
-}
-
-.team__text-box > h3 {
-  @include font(null, 16px, 1.2, null);
-  margin-bottom: 10px;
-  text-align: center;
-  color: $primary-text-color;
+  p {
+    @include font(400, 16px, 1.2, null);
+    text-align: center;
+    color: $icon-color;
+  }
+  h3 {
+    @include font(null, 16px, 1.2, null);
+    margin-bottom: 10px;
+    text-align: center;
+    color: $primary-text-color;
+  }
 }
